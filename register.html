@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <script src="register.js"></script>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+  <h2>Register</h2>
+  
+  <form action="register.php" method="post">
+
+    <label for="register_username">Username:</label>
+    <input type="text" id="register_username" name="register_username" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="gender">Gender:</label>
+    <select name="gender" id="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option> 
+      <option value="Other">Other</option>
+    </select>
+  
+    <label for="dob">Date of Birth:</label>   
+    <input type="date" id="dob" name="dob">  
+  
+    <label for="register_password">Password:</label>
+    <input type="password" id="register_password" name="register_password" required>
+    
+    <input type="submit" value="Register">
+  
+  </form>
+
+    <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+
+    </body>
+</html>

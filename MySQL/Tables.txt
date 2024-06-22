@@ -1,0 +1,37 @@
+create database wardrobe;
+use wardrobe;
+
+CREATE TABLE users (
+   user_id INT AUTO_INCREMENT PRIMARY KEY,
+   username VARCHAR(50) NOT NULL,
+   email VARCHAR(100) NOT NULL UNIQUE,
+   passwd VARCHAR(255) NOT NULL,
+   gender ENUM('Male', 'Female', 'Other') DEFAULT NULL,  
+   dob DATE DEFAULT NULL,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE clothes (
+    cloth_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    cloth_name VARCHAR(100),
+    image_path VARCHAR(255) NOT NULL,
+    color VARCHAR(50) NOT NULL,
+    occasion VARCHAR(50),
+    category VARCHAR(20) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES USERS(user_id) 
+);
+
+CREATE TABLE outfit (
+  user_id INT,
+  outfit_id INT AUTO_INCREMENT PRIMARY KEY, 
+  outfit_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES USERS(user_id)
+);
+CREATE TABLE outfit_clothing (
+  outfit_id INT,
+  cloth_id INT,
+  PRIMARY KEY(outfit_id, cloth_id),  
+  FOREIGN KEY(outfit_id) REFERENCES outfit(outfit_id),
+  FOREIGN KEY(cloth_id) REFERENCES clothes(cloth_id)  
+);

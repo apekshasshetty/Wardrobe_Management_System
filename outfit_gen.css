@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+.clothing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+}
+.clothing-btn {
+    border: .5px solid #6f5237; /* Border color for the button */
+    border-radius: 5px; /* Border radius for a slightly rounded appearance */
+    margin-bottom: 20px;
+    text-align: center;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+.clothing-btn img {
+    width: 50%; /* Make the image fill the button */
+    height: auto; /* Maintain the image aspect ratio */
+}
+
+.btn-content {
+    padding: 10px;
+}
+
+/* Style for the selected items in the right container */
+.selected-item {
+    border-radius: 5px; /* Border radius for a slightly rounded appearance */
+    margin-bottom: 10px;
+    text-align: center;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+.selected-item img {
+    width: 100%; /* Make the image fill the selected item */
+    height: auto; /* Maintain the image aspect ratio */
+}
+
+.container {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.container.left {
+    background-color: #f0f0f0; /* Adjust the background color as needed */
+    width: 70%;
+}
+.container.right {
+    width: 30%;
+    float: left;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #e0e0e0; /* Adjust the background color as needed */
+}
+/* Clearfix to handle container overflow */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
